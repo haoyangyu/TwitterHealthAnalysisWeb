@@ -1,0 +1,113 @@
+
+/* BANNER AREA */
+#bannerArea {
+	width: 1280px;
+	height: 135px;
+	/*background-color: #4971a2;*/
+	background-image: url(images/index_logo.jpg);
+	background-repeat: no-repeat;
+}
+
+
+
+.bannernav {
+	padding-top: 10px;
+	padding-right: 40px;
+	float: right;
+	color: white;
+	font-size: 10px;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+
+#container{
+  
+}
+/*.toplogo {
+	margin-left: 20px;
+	padding-top: 20px;
+}
+*/
+
+#navbar {
+	position: absolute;
+	top: 140px;
+	left: 40px;
+	width: 560px;
+	float: left;
+	font-size: 15px;}
+	
+#login {
+	position: absolute;
+	top: 140px;
+	left: 680px;
+	width: 560px;
+	float: left;
+	font-size: 15px;
+	color: #005580;
+}
+
+.fb-share-button{
+	position: absolute;
+	top: 0px;
+	left: 1130px;
+}
+
+.twitter-share-button{
+	position: absolute;
+	top: 160px;
+	left: 1130px;
+}
+#main{width:auto; display:block; padding:10px 0;}
+
+#map-canvas {
+	position: absolute;
+	left: 720px;
+	top: 200px;
+	width:500px;
+                    height: 80%;
+                    margin: 0px;
+                    padding: 0px
+                }
+            #panel {
+	position: absolute;
+	top: 161px;
+	left: 920px;
+	margin-left: -180px;
+	z-index: 5;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #999;
+            }
+
+#leaderboard{position: absolute;
+	left: 60px;
+	top: 200px;
+	width:500px;
+}
+
+#heatmap{position: absolute;
+	left: 720px;
+	top: 200px;
+	width:500px;
+}
+
+#footer{
+	position: absolute;
+	top: 800px;
+	width:1280px;
+	text-align: center;
+	display:block; font-size:11px; }
+	
+#tabs{
+	position: absolute;
+	top: 200px;
+	left: 200px;
+}
+	
+.ui-tabs-vertical { width: 55em; }
+  .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+  .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+  .ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+  .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+  .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}

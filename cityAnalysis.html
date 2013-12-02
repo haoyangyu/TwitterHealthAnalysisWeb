@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>16:332:563:01 SOFTWARE ENGINEERING-Health Monitoring Analytics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/Chart.min.js"></script> 
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script src="js/d3.min.js"></script> 
+	 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/json-to-table.js"></script>
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+   <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+ 
+    // fix the classes
+    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
+      .removeClass( "ui-corner-all ui-corner-top" )
+      .addClass( "ui-corner-bottom" );
+ 
+    // move the nav to the bottom
+    $( ".tabs-bottom .ui-tabs-nav" ).appendTo( ".tabs-bottom" );
+  });
+  </script>
+  <style>
+  /* force a height so the tabs don't jump as content height changes */
+  #tabs .tabs-spacer { float: left; height: 200px; }
+  .tabs-bottom .ui-tabs-nav { clear: left; padding: 0 .2em .2em .2em; }
+  .tabs-bottom .ui-tabs-nav li { top: auto; bottom: 0; margin: 0 .2em 1px 0; border-bottom: auto; border-top: 0; }
+  .tabs-bottom .ui-tabs-nav li.ui-tabs-active { margin-top: -1px; padding-top: 1px; }
+  </style>
+  </head>
+ 
+	<body>
+<!---------------- This part is for facebook sharing--------------------->
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_CN/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!----------------------------------------------------------------------->
+
+	<div id="container">
+	
+    <div id="bannerArea">			
+		<div class="bannernav"><a href="#" >Privacy Policy</a>  |  <a href="http://localhost:8888/contact.php" >Contact Us  </a>| <a href="#" >Site Map</a></div>
+		<div class="toplogo"></div>
+	</div>
+	
+    <div id="navbar">
+    	<a href="http://localhost:8888/twitterAnalytics.php">Home</a> |
+    	<a href="index.html?about">City Analysis</a> |
+		<a href="mailto:haoyang.yu@rutgers.edu">Personal Service</a> |
+		<a href="mailto:haoyang.yu@rutgers.edu">About us</a>
+	</div>
+	
+    <div class="fb-share-button" data-href="http://haoyangyu.github.io" data-type="button_count"></div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://dev.twitter.com" data-via="your_screen_name" data-lang="en">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+	<div id="tabs" class="tabs-bottom">
+  <ul>
+    <li><a href="#tabs-1">Overview</a></li>
+    <li><a href="#tabs-2">Activity Tpye</a></li>
+    <li><a href="#tabs-3">Day Distribution</a></li>
+    <li><a href="#tabs-4">Time Distribution</a></li>
+    <li><a href="#tabs-5">Colorie Burn</a></li>
+  </ul>
+  <div id="tabs-1">
+    
+  </div>
+  <div id="tabs-2">
+  <h5>Running: Swimming:  </h5>
+ <canvas id="countries" width="600" height="400"></canvas>
+    <script>
+	//Create the data object to pass to the chart
+            var pieData = [
+	{
+		value: 20,
+		color:"#878BB6"
+	},
+	{
+		value : 40,
+		color : "#4ACAB4"
+	},
+	{
+		value : 10,
+		color : "#FF8153"
+	},
+	{
+		value : 30,
+		color : "#FFEA88"
+	}
+];
+   var pieOptions = {
+	  segmentShowStroke : false,
+	  animateScale : true
+}
+    var countries= document.getElementById("countries").getContext("2d");
+	new Chart(countries).Pie(pieData, pieOptions);
+</script>
+
+  </div>
+  <div id="tabs-3">
+  
+  </div>
+  
+  <div id="tabs-4">
+   
+  </div>
+  
+  <div id="tabs-5">
+    <canvas id="calories" width="600" height="400"></canvas>
+    
+    <script>
+    var data = {
+	labels : ["January","February","March","April","May","June","July"],
+	datasets : [
+		{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			data : [65,59,90,81,56,55,40]
+		},
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			data : [28,48,40,19,96,27,100]
+		}
+	]
+}
+	var dataOptions={
+		scaleFontSize : 13
+}
+
+  var calories= document.getElementById("calories").getContext("2d");
+	new Chart(calories).Bar(data,dataOptions);
+</script>
+    
+    
+  </div>
+</div>
+	<div id="footer">
+		<h6>Version 1.0 2013 Copyright for Group#2</h6>
+    </div>
+	</div>
+
+	
+	</div>
+	
+	
+	</body>
+</html>
